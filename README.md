@@ -6,6 +6,7 @@ A simple API to check if a URL can be loaded inside an iframe.
 ## How it works?
 
 Takes a URL like: http://localhost:3000/{URL}
+
 Example: <http://localhost:3000/https://example.com>
 
 And checks if the URL follow those rules:
