@@ -1,0 +1,22 @@
+{
+	"name": "column-view-api",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"web": "node index.js"
+	},
+	"dependencies": {
+		"koa": "^2.13.0",
+		"superagent": "^5.3.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Alex-D/Column-View.git"
+	},
+	"author": "Alex-D",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Alex-D/Column-View/issues"
+	},
+	"homepage": "https://column-view.alex-d.fr"
+}
