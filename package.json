@@ -3,7 +3,10 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"web": "node index.js"
+		"start": "node index.js"
+	},
+	"engines": {
+		"node": ">=14"
 	},
 	"dependencies": {
 		"koa": "^2.13.0",
