@@ -19,7 +19,7 @@ app.use(async ctx => {
 	}
 
 	ctx.body = {
-		supportsIframes: !['SAMEORIGIN', 'DENY'].includes(response.headers['x-frame-options']),
+		supportsIframe: !['SAMEORIGIN', 'DENY'].includes(response.headers['x-frame-options']),
 	}
 });
 
