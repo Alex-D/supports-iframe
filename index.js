@@ -1,7 +1,9 @@
 import Koa from 'koa'
+import cors from '@koa/cors'
 import superagent from 'superagent'
 
 const app = new Koa()
+app.use(cors())
 
 app.use(async ctx => {
 	const urlToFetch = ctx.path.substr(1)
