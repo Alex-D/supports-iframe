@@ -23,7 +23,7 @@ You can try it there:
 
 ## See it in action
 
-This project is used by [Column View](https://column-view.alex-d.fr), a tool that helps you view the mobile version of your website directly in multiple columns or helps you check multiple pages at once.
+This project is used by [Column View](https://column-view.com), a tool that helps you view the mobile version of your website directly in multiple columns or helps you check multiple pages at once.
 
 
 ## Author
