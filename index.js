@@ -7,19 +7,38 @@ app.use(cors())
 
 app.use(async ctx => {
 	const urlToFetch = ctx.path.substr(1)
-	let response
-	try {
-		response = await superagent.get(urlToFetch)
-	} catch (err) {
-		ctx.status = 404
+
+	// Avoid localhost checks, assume iframes are supported
+	if (urlToFetch.match(/^https?:\/\/.*localhost/)) {
 		ctx.body = {
-			error: 'Not Found',
+			supportsIframe: true
 		}
 		return
 	}
 
+	// Make a HTTP GET request to errors or headers
+	let response
+	try {
+		response = await superagent.get(urlToFetch)
+	} catch (err) {
+		if (err.status !== undefined && err.status >= 300) {
+			ctx.status = 404
+			ctx.body = {
+				error: 'Not Found',
+			}
+			return
+		}
+
+		ctx.body = {
+			supportsIframe: true
+		}
+		return
+	}
+
+	// Check headers
+	const supportsIframe = !['SAMEORIGIN', 'DENY'].includes(response.headers['x-frame-options'].split(',')[0])
 	ctx.body = {
-		supportsIframe: !['SAMEORIGIN', 'DENY'].includes(response.headers['x-frame-options']),
+		supportsIframe,
 	}
 });
 
