@@ -19,7 +19,18 @@ app.use(async ctx => {
 	// Make a HTTP GET request to errors or headers
 	let response
 	try {
-		response = await superagent.get(urlToFetch)
+		response = await new Promise((resolve, reject) => {
+			superagent
+				.get(urlToFetch)
+				.set('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36')
+				.end((err, res) => {
+					if (err) {
+						return reject(err)
+					}
+
+					resolve(res)
+				})
+		})
 	} catch (err) {
 		if (err.status !== undefined && err.status >= 300) {
 			ctx.status = 404
