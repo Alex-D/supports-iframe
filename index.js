@@ -36,7 +36,8 @@ app.use(async ctx => {
 	}
 
 	// Check headers
-	const supportsIframe = !['SAMEORIGIN', 'DENY'].includes(response.headers['x-frame-options'].split(',')[0])
+	const xFrameOptionHeader = response.headers['x-frame-options'] || ''
+	const supportsIframe = !['SAMEORIGIN', 'DENY'].includes(xFrameOptionHeader.split(',')[0])
 	ctx.body = {
 		supportsIframe,
 	}
