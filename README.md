@@ -16,7 +16,7 @@ And checks if the URL follow those rules:
 
 You can try it there:
 
-- not a 2xx: <https://supports-iframe.vercel.app/api?url=https://column-view.alex-d.fr/404>
+- not a 2xx: <https://supports-iframe.vercel.app/api?url=https://column-view.com/404>
 - can be loaded: <https://supports-iframe.vercel.app/api?url=https://monitoror.com>
 - cannot be loaded: <https://supports-iframe.vercel.app/api?url=https://google.com>
 
