@@ -1,6 +1,18 @@
 import superagent from 'superagent'
 
-export default async function handler(request, response) {
+const allowCors = fn => async (request, response) => {
+	response.setHeader('Access-Control-Allow-Credentials', true)
+	response.setHeader('Access-Control-Allow-Origin', '*')
+	response.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS')
+	if (request.method === 'OPTIONS') {
+		response.status(200).end()
+		return
+	}
+
+	return await fn(request, response)
+}
+
+const handler = async (request, response) => {
 	const urlToFetch = request.query.url
 
 	// Avoid localhost checks, assume iframes are supported
@@ -47,3 +59,5 @@ export default async function handler(request, response) {
 		supportsIframe,
 	})
 }
+
+export default allowCors(handler)
