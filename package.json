@@ -1,26 +1,21 @@
 {
-	"name": "column-view-api",
+	"name": "supports-iframe",
 	"private": true,
 	"type": "module",
-	"scripts": {
-		"start": "node index.js"
-	},
 	"engines": {
 		"node": ">=14"
 	},
 	"dependencies": {
-		"@koa/cors": "^3.1.0",
-		"koa": "^2.13.0",
 		"superagent": "^5.3.1"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Alex-D/Column-View.git"
+		"url": "git+https://github.com/Alex-D/supports-iframe.git"
 	},
 	"author": "Alex-D",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/Alex-D/Column-View/issues"
+		"url": "https://github.com/Alex-D/supports-iframe/issues"
 	},
-	"homepage": "https://column-view.alex-d.fr"
+	"homepage": "https://github.com/Alex-D/supports-iframe"
 }

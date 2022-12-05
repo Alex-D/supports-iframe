@@ -5,9 +5,9 @@ A simple API to check if a URL can be loaded inside an iframe.
 
 ## How it works?
 
-Takes a URL like: http://localhost:8000/{URL}
+Takes a URL like: http://localhost:8000/api?url={URL}
 
-Example: <http://localhost:8000/https://example.com>
+Example: <http://localhost:8000/api??url=https://example.com>
 
 And checks if the URL follow those rules:
 
@@ -16,14 +16,19 @@ And checks if the URL follow those rules:
 
 You can try it there:
 
-- not a 2xx: <https://supports-iframe.herokuapp.com/https://column-view.alex-d.fr/404>
-- can be loaded: <https://supports-iframe.herokuapp.com/https://monitoror.com>
-- cannot be loaded: <https://supports-iframe.herokuapp.com/https://google.com>
+- not a 2xx: <https://supports-iframe.vercel.app/api?url=https://column-view.alex-d.fr/404>
+- can be loaded: <https://supports-iframe.vercel.app/api?url=https://monitoror.com>
+- cannot be loaded: <https://supports-iframe.vercel.app/api?url=https://google.com>
 
 
 ## See it in action
 
 This project is used by [Column View](https://column-view.com), a tool that helps you view the mobile version of your website directly in multiple columns or helps you check multiple pages at once.
+
+
+## Development
+
+To run dev server, use `vercel dev` (`npm i -g vercel` if needed)
 
 
 ## Author
